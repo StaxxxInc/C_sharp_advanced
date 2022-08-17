@@ -5,34 +5,37 @@
 // 9012 -> 12
 
 
+
+// метод получения числа
 string GetNumber()
 {
-	
-	Console.Write("Введите число = ");
-	number = Console.Readline();
-	// A = Convert.ToInt32(Console.Readline().ToString()); //
-	return number;	
-} 
+    Console.Write("Введите номер = ");
+    string Number = Console.ReadLine();
+    return Number;
+}
 
-string MakeSumm(string number);
+// метод получения суммы
+int MakeSumm(string Num)
 {
-	int result = 0;
-	int a=0;
 	
-	for (int i=0; i<Lenght.number; i++)
-	{
-		a = Convert.ToInt32(number[i]);
-		result = result + a;
-	}
-	return result;
+    int result = 0;
+    int a = 0;
+
+    for (int i = 0; i < Num.Length; i++)
+    {
+        a = Convert.ToInt32(Num[i].ToString());
+        result = result + a;
+    }
+
+    return result; 
 }
 
 void Print(string number, int result)
 {
-	Console.Write("Сумма чисел "+ number + " = " + result);	
+    Console.Write("Сумма чисел " + number + " = " + result);
 }
 
-String Num = GetNumber();
-MakeSumm(Num);
-Print();
+string Number = GetNumber();
+int ResultSum = MakeSumm(Number);
+Print(Number, ResultSum);
 

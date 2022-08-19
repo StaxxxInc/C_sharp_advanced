@@ -38,14 +38,14 @@ void FillArray(int[,] matr)
 
 int GetI()
 {
-    Console.Write("Введите количество строк = ");
+    Console.Write("Введите количество столбцов = ");
     int i = Convert.ToInt32(Console.ReadLine().ToString());
     return i;
 }
 
 int GetJ()
 {
-    Console.Write("Введите количество столбцов = ");
+    Console.Write("Введите количество строк = ");
     int j = Convert.ToInt32(Console.ReadLine().ToString());
     return j;
 }

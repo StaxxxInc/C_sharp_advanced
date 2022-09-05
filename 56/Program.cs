@@ -38,34 +38,38 @@ void FillArray(int[,] matr)
 }
 
 
-
-
-
 int FindMore(int[,] matrix)
 {
-	int count = 0;
-	int sum = 0;
-	int max = 0;
-	for (int i = 0; i < matrix.GetLength(0); i++)
+    int count = 0;
+    int sum = 0;
+    int min = 0;
+    int result = 0;
+    for (int i = 0; i < matrix.Length / 4; i++)
     {
-		
-		for (int j = 0; i < matrix.GetLength(0); j++)
-	
-		{
-			sum = matrix[i,j] + sum;	
-		}
-			
 
-		if (max > sum)
-		{
-			max = sum;
-			count++;
-		}
-		
-	}
-	
-	
-	return count;
+        for (int j = 0; j < matrix.Length / 4; j++)
+        {
+            sum = matrix[i, j] + sum;
+        }
+        
+        count++;
+
+        if (min == 0)
+        {
+            min = sum;
+            result = count;
+
+        }
+
+        if (sum < min)
+        {
+            min = sum;
+            result = count;
+        }
+
+        sum = 0;
+    }
+    return result;
 }
 
 
@@ -77,7 +81,9 @@ Console.WriteLine();
 Console.WriteLine("Сгенерированный массив = ");
 PrintArray(matrix);
 Console.WriteLine();
-FindMore(matrix);
+Console.WriteLine("номер строки с наименьшей суммой элементов: ");
+int more = FindMore(matrix);
+Console.WriteLine(more);
 
 
 

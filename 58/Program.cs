@@ -55,11 +55,12 @@ int[,] MatrixProduct (int[,] matrixOne, int[,] matrixTwo)
 	int[,] matrixResult = new int[4, 4];
 		for (int i = 0; i < matrixOne.GetLength(0); i++)
     {
-		
-		for (int j = 0; i < matrixOne.GetLength(0); j++)
+		for (int j = 0; j < matrixOne.GetLength(0); j++)
 	
 		{
-			matrixResult[i,j] = matrixOne[i,j] * matrixTwo[i,j];			
+			matrixResult[i,j] = matrixOne[i,j] * matrixTwo[i,j];
+            
+            		
 		}
 	}
 	return matrixResult;
